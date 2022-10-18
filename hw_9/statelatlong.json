@@ -1,0 +1,308 @@
+[
+ {
+   "State": "AL",
+   "Latitude": 32.6010112,
+   "Longitude": -86.6807365,
+   "City": "Alabama"
+ },
+ {
+   "State": "AK",
+   "Latitude": 61.3025006,
+   "Longitude": -158.7750198,
+   "City": "Alaska"
+ },
+ {
+   "State": "AZ",
+   "Latitude": 34.1682185,
+   "Longitude": -111.930907,
+   "City": "Arizona"
+ },
+ {
+   "State": "AR",
+   "Latitude": 34.7519275,
+   "Longitude": -92.1313784,
+   "City": "Arkansas"
+ },
+ {
+   "State": "CA",
+   "Latitude": 37.2718745,
+   "Longitude": -119.2704153,
+   "City": "California"
+ },
+ {
+   "State": "CO",
+   "Latitude": 38.9979339,
+   "Longitude": -105.550567,
+   "City": "Colorado"
+ },
+ {
+   "State": "CT",
+   "Latitude": 41.5187835,
+   "Longitude": -72.757507,
+   "City": "Connecticut"
+ },
+ {
+   "State": "DE",
+   "Latitude": 39.145251,
+   "Longitude": -75.4189206,
+   "City": "Delaware"
+ },
+ {
+   "State": "DC",
+   "Latitude": 38.8993487,
+   "Longitude": -77.0145666,
+   "City": "District of Columbia"
+ },
+ {
+   "State": "FL",
+   "Latitude": 27.9757279,
+   "Longitude": -83.8330166,
+   "City": "Florida"
+ },
+ {
+   "State": "GA",
+   "Latitude": 32.6781248,
+   "Longitude": -83.2229757,
+   "City": "Georgia"
+ },
+ {
+   "State": "HI",
+   "Latitude": 20.46,
+   "Longitude": -157.505,
+   "City": "Hawaii"
+ },
+ {
+   "State": "ID",
+   "Latitude": 45.4945756,
+   "Longitude": -114.1424303,
+   "City": "Idaho"
+ },
+ {
+   "State": "IL",
+   "Latitude": 39.739318,
+   "Longitude": -89.504139,
+   "City": "Illinois"
+ },
+ {
+   "State": "IN",
+   "Latitude": 39.7662195,
+   "Longitude": -86.441277,
+   "City": "Indiana"
+ },
+ {
+   "State": "IA",
+   "Latitude": 41.9383166,
+   "Longitude": -93.389798,
+   "City": "Iowa"
+ },
+ {
+   "State": "KS",
+   "Latitude": 38.4987789,
+   "Longitude": -98.3200779,
+   "City": "Kansas"
+ },
+ {
+   "State": "KY",
+   "Latitude": 37.8222935,
+   "Longitude": -85.7682399,
+   "City": "Kentucky"
+ },
+ {
+   "State": "LA",
+   "Latitude": 30.9733766,
+   "Longitude": -91.4299097,
+   "City": "Louisiana"
+ },
+ {
+   "State": "ME",
+   "Latitude": 45.2185133,
+   "Longitude": -69.0148656,
+   "City": "Maine"
+ },
+ {
+   "State": "MD",
+   "Latitude": 38.8063524,
+   "Longitude": -77.2684162,
+   "City": "Maryland"
+ },
+ {
+   "State": "MA",
+   "Latitude": 42.0629398,
+   "Longitude": -71.718067,
+   "City": "Massachusetts"
+ },
+ {
+   "State": "MI",
+   "Latitude": 44.9435598,
+   "Longitude": -86.4158049,
+   "City": "Michigan"
+ },
+ {
+   "State": "MN",
+   "Latitude": 46.4418595,
+   "Longitude": -93.3655146,
+   "City": "Minnesota"
+ },
+ {
+   "State": "MS",
+   "Latitude": 32.5851062,
+   "Longitude": -89.8772196,
+   "City": "Mississippi"
+ },
+ {
+   "State": "MO",
+   "Latitude": 38.3046615,
+   "Longitude": -92.437099,
+   "City": "Missouri"
+ },
+ {
+   "State": "MT",
+   "Latitude": 46.6797995,
+   "Longitude": -110.044783,
+   "City": "Montana"
+ },
+ {
+   "State": "NE",
+   "Latitude": 41.5008195,
+   "Longitude": -99.680902,
+   "City": "Nebraska"
+ },
+ {
+   "State": "NV",
+   "Latitude": 38.502032,
+   "Longitude": -117.0230604,
+   "City": "Nevada"
+ },
+ {
+   "State": "NH",
+   "Latitude": 44.0012306,
+   "Longitude": -71.5799231,
+   "City": "New Hampshire"
+ },
+ {
+   "State": "NJ",
+   "Latitude": 40.1430058,
+   "Longitude": -74.7311156,
+   "City": "New Jersey"
+ },
+ {
+   "State": "NM",
+   "Latitude": 34.1662325,
+   "Longitude": -106.0260685,
+   "City": "New Mexico"
+ },
+ {
+   "State": "NY",
+   "Latitude": 40.7056258,
+   "Longitude": -73.97968,
+   "City": "New York"
+ },
+ {
+   "State": "NC",
+   "Latitude": 35.2145629,
+   "Longitude": -79.8912675,
+   "City": "North Carolina"
+ },
+ {
+   "State": "ND",
+   "Latitude": 47.4678819,
+   "Longitude": -100.3022655,
+   "City": "North Dakota"
+ },
+ {
+   "State": "OH",
+   "Latitude": 40.1903624,
+   "Longitude": -82.6692525,
+   "City": "Ohio"
+ },
+ {
+   "State": "OK",
+   "Latitude": 35.3097654,
+   "Longitude": -98.7165585,
+   "City": "Oklahoma"
+ },
+ {
+   "State": "OR",
+   "Latitude": 44.1419049,
+   "Longitude": -120.5380993,
+   "City": "Oregon"
+ },
+ {
+   "State": "PA",
+   "Latitude": 40.9945928,
+   "Longitude": -77.6046984,
+   "City": "Pennsylvania"
+ },
+ {
+   "State": "RI",
+   "Latitude": 41.5827282,
+   "Longitude": -71.5064508,
+   "City": "Rhode Island"
+ },
+ {
+   "State": "SC",
+   "Latitude": 33.62505,
+   "Longitude": -80.9470381,
+   "City": "South Carolina"
+ },
+ {
+   "State": "SD",
+   "Latitude": 44.2126995,
+   "Longitude": -100.2471641,
+   "City": "South Dakota"
+ },
+ {
+   "State": "TN",
+   "Latitude": 35.830521,
+   "Longitude": -85.9785989,
+   "City": "Tennessee"
+ },
+ {
+   "State": "TX",
+   "Latitude": 31.1693363,
+   "Longitude": -100.0768425,
+   "City": "Texas"
+ },
+ {
+   "State": "UT",
+   "Latitude": 39.4997605,
+   "Longitude": -111.547028,
+   "City": "Utah"
+ },
+ {
+   "State": "VT",
+   "Latitude": 43.8717545,
+   "Longitude": -72.4477828,
+   "City": "Vermont"
+ },
+ {
+   "State": "VA",
+   "Latitude": 38.0033855,
+   "Longitude": -79.4587861,
+   "City": "Virginia"
+ },
+ {
+   "State": "WA",
+   "Latitude": 38.8993487,
+   "Longitude": -77.0145665,
+   "City": "Washington"
+ },
+ {
+   "State": "WV",
+   "Latitude": 38.9201705,
+   "Longitude": -80.1816905,
+   "City": "West Virginia"
+ },
+ {
+   "State": "WI",
+   "Latitude": 44.7862968,
+   "Longitude": -89.8267049,
+   "City": "Wisconsin"
+ },
+ {
+   "State": "WY",
+   "Latitude": 43.000325,
+   "Longitude": -107.5545669,
+   "City": "Wyoming"
+ }
+]
