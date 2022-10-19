@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/tornado2021_region_time.csv"
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+  "width":1000,
+  "height": 500,
+  "mark": {"type": "bar"},
+  "title": "Comparison Tornadoes Records With Different Period Of A Day With Selected Month",
+ 
+  
+  "encoding": {
+    "x": {
+      "field": "mo",
+      "sort": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    "y": {"aggregate": "count", "field": "mo", "type": "quantitative"},
+    "xOffset": {"field": "Time_of_day"},
+    "color": {"field": "Time_of_day", "type": "nominal"},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
+    },
+     "tooltip": [{"field": "Time_of_day", "type": "nominal"},
+                 {"field": "mo", "type": "nominal"},
+                 {"field": "mo","aggregate":"count", "type": "quantitative"}
+                  ]
+     },
+                
+  
+  "config": {}
+}

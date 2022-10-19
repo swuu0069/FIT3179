@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 400,
+  "title": {
+    "text":"Wid and Length Correlation Regions",
+    "fontSize": 15
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/tornado2021_region_time.csv"
+  },
+  "transform": [
+    {"filter": "datum.len > 0 && datum.len<60 "},
+    {"filter": "datum.wid> 0 && datum.wid<2000"}
+  ],
+  "params": [
+    {
+      "name": "region_highlight",
+      "select": {"type": "point", "fields": ["regions"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "len",
+      "type": "quantitative",
+      "title": "Len in Miles",
+      "axis": {"tickCount": 7},
+      "scale": {"domain": [0, 60]}
+    },
+    "y": {
+      "field": "wid",
+      "type": "quantitative",
+      "axis": {"tickCount": 6},
+      "scale": {"domain": [0, 2000]}
+    },
+    "color": {
+      "field": "regions",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Northeast", "West", "South", "Midwest"],
+        "range": ["#f03b20", "#2c7fb8", "#756bb1", "#dd1c77"]
+      },
+      "legend": {"labelFontSize": 12, "symbolSize": 100,"titleFontSize":15
+      }
+    },
+    "opacity": {
+      "condition": {"param": "region_highlight", "value": 0.8},
+      "value": 0.1
+    },
+    "tooltip": [
+      {"field": "st", "type": "nominal"},
+      {"field": "len", "type": "quantitative", "format": ","},
+      {"field": "wid", "type": "quantitative", "format": ","},
+      {"field": "regions", "type": "nominal"}
+    ]
+  },
+  "config": {}
+}

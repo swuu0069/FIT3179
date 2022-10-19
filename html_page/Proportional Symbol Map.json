@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": "Magnitude of Tornadoes In America In 2021 From 1 To 8 With Width",
+  "projection": {"type": "albersUsa"},
+  "params": [
+    {
+      "name": "mag_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "Maximum Magnitude: "
+      }
+    }
+  ],
+  
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/swuu0069/FIT3179/main/hw_9/output_1/us_states.topojson",
+        "format": {"type": "topojson", "feature": "us_states"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/swuu0069/FIT3179/main/hw_9/tornado2021.csv"
+      },
+      "mark": {"type": "circle"},
+      "params": [
+    {
+      "name": "mag_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "Minimum Magnitude: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.mag > 0"},
+    {"filter": "datum.wid > 0"},
+    {"filter": "datum.mag <= mag_Above"}
+  ],
+      "encoding": {
+        "longitude": {"field": "slon", "type": "quantitative"},
+        "latitude": {"field": "slat", "type": "quantitative"},
+        "size": {
+          "field": "mag",
+          "type": "quantitative",
+          "title": "Magnitude (Richter scale)",
+          "scale": {"domain": [1, 8]}
+        },
+        "color": {
+          "field": "wid",
+          "type": "quantitative",
+          "title": "Width in yards",
+          "scale": {"scheme": "reds"}
+        },
+        "tooltip": [
+      {"field": "st", "type": "nominal"},
+      {"field": "mag", "type": "quantitative", "format": ","},
+      {"field": "wid", "type": "quantitative", "format": ","}
+     
+    ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/statelatlong.json"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [ {
+        "mark": {
+          "type": "text",
+          "dy": -2,
+          "size":10
+        },
+        "encoding": {
+          "text": {"field": "State", "type": "nominal"}
+        }
+      }]
+    }
+  ],
+  "config": {}
+}

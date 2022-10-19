@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Total Number of Tornadoes Records In US In 2021 With Different Times",
+    "fontSize": 15
+  },
+  "width": 650,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/tornado2021_region_time.csv"
+  },
+  "params": [
+    {
+      "name": "time_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Afternoon", "Evening", "Night", "Morning"],
+        "labels": ["Show All", "Afternoon", "Evening", "Night", "Morning"],
+        "name": "Time Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "time_selection == null || datum.Time_of_day == time_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "mo",
+      "type": "nominal",
+      "title": "Month",
+      "sort": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "Time_of_day",
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Sum of Records"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "width": 26},
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "Time_of_day",
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          {"field": "Time_of_day", "type": "nominal"},
+          {"field": "mo", "type": "nominal"}
+        ],
+        "color": {
+          "field": "Time_of_day",
+          "type": "nominal",
+          
+          "scale": {
+            "domain": ["Afternoon", "Evening", "Night", "Morning"],
+            "range": ["#addd8e", "#fec44f", "#bcbddc", "#fa9fb5"]
+          },
+          "title": "Time Of Day"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -5
+      },
+      "encoding": {
+        "text": {
+          "field": "regions",
+          "aggregate": "count",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": {}
+}

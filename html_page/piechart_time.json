@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/time_mo.csv"
+  },
+  "width": 300,
+  "height": 300,
+  "title": {"text":"Proportion of Tornadoes From Time with Months",
+            "fontSize":15},
+  "mark": {"type": "arc"},
+  "params": [
+    {
+      "name": "Month_selection",
+      "bind": {
+        "input": "select",
+        "options": [null,13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        "labels": [
+          "Select",
+          "All year(2021)",
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "name": "Month Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Month_selection == null || datum.mo == Month_selection"}
+  ],
+  "encoding": {
+    "theta": {"field": "n", "type": "quantitative"},
+    "color": {
+      "field": "Time_of_day",
+      "type": "nominal",
+      
+      "scale": {
+        "domain": ["Afternoon", "Evening", "Night", "Morning"],
+        "range": ["#addd8e", "#fec44f", "#bcbddc", "#fa9fb5"]
+      },
+      "legend": {"labelFontSize": 12, "symbolSize": 100,"titleFontSize":15}
+    },
+    "tooltip": [
+      {"field": "Time_of_day", "type": "nominal"},
+      {"field": "per", "type": "nominal"},
+      {"field": "n", "type": "quantitative", "format": ","}
+    ]
+  },
+  "config": {}
+}

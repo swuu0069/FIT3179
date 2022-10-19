@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
+  <style type="text/css">
+      div{
+        margin: auto;
+      }
+  </style>
+</head>
+
+<body >
+
+    <div>
+      <div class="vis-container">
+        <div class="vis-container">
+            <h1>Tornadoes In the United State In 2021</h1>
+            <p>The report demonstrates the situation of tornadoes by Width, Degree of Severity, and Time.</p>
+        </div>
+      </div>
+    
+
+      <div>
+          <h2 >Map of Width and Magnitude of Tornadoes </h2>
+          <p>The level of tonadoes Magnitude is demonstrated by the size of circle, the length of the width is demonstrated by by the sequential </p>
+          <p> from light to grey. We can observe that most of the tornadoes happened in the midwest and south of the United State. </p>
+        <p>  Also as we can observe that most of the Magnitude of Tornadoes is postively corresponded to width of tornadoes, the larger the circle the darker the color in general.
+          </p>
+        </div>
+      </div>
+
+      
+      <div id="vis1" class="vis-container"></div>
+      <p>We can see the tornaodes in the south has deeper magnitude and width compare to other area.
+      </p>
+     
+
+    
+    
+      
+    
+    <!-- end pure grid group -->
+    <div class="vis-container" >
+      <div class="vis-container">
+        <h2 >Scatterplot of len and width With Regions And Different Period Of A Day </h2>
+        <p > The states in the United State insubdivided by bureau region in the left hand side.</p>
+        <p >Using direct selection filter on legend,we can filter each region with scatterplot.</p>
+        <p >The states in the United State in the right hand side is color hue by period of a day.</p>
+        <p >Using direct selection filter on legend, we can filter each time period with scatterplot.</p>
+        <p > We can observe that len and wid are positive correlated. </p>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis2" class="vis-container"></div>
+          </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis9" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="vis-container" >
+      <div class="vis-container">
+          <h2 >The Records of Tornadoes Vary Around Period of A Day</h2>
+          <p>We can see the frequency of tornadoes relates to period of a day with observing the stacked bar chart and piechart below.
+          </p>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis5" class="vis-container"></div>
+          </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis7" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+      <p>Most of the tornadoes event happened in <b>afternoon</b> and <b>evening</b> . </p>
+    <!-- end pure grid group -->
+
+
+
+
+
+    <div class="vis-container" >
+      <div class="vis-container">
+          <h2 >The Records of Tornadoes Vary Around The Regions</h2>
+          <p>We can see the frequency of tornadoes relates region with observing the stacked bar chart and piechart below.
+          </p>
+        </div>
+      </div>
+
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis6" class="vis-container"></div>
+          </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div class="center">
+              <div id="vis8" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Most of the tornadoes event happened in the region of <b>midwest</b> and <b>South</b> . </p>
+
+      <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+          <p>This visualisation is created by Siming Wu(31511856)</a>. The repository is <a href="https://github.com/swuu0069/swuu0069.github.io" 
+            target=" _blank">github repository online</href>.</p>
+        </div>
+      </div>
+  <script type="text/javascript">
+    var specVis1 = "./Proportional Symbol Map.json";
+    var specVis2 = "./scatterplot_region.json"
+    var specVis3 = "./stackedbar_time.json"
+    var specVis4 = "./stackedbar_region.json"
+    var specVis5 = "./piechart_time.json"
+    var specVis6 ="./piechart_region.json";
+    var specVis7 = "./scatterplot_time.json"
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis6', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis7', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis8', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis9', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+  </script>
+</body>
+
+</html>
