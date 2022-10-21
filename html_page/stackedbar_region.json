@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Total Number of Tornadoes Records In US In 2021 Withe Different Regions",
+    "fontSize": 15
+  },
+  "width": 650,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/swuu0069/swuu0069.github.io/main/hw_9/tornado2021_region_time.csv"
+  },
+  "params": [
+    {
+      "name": "region_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Northeast", "West", "South", "Midwest"],
+        "labels": ["Show All", "Northeast", "West", "South", "Midwest"],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "region_selection == null || datum.regions == region_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "mo",
+      "type": "nominal",
+      "title": "Month",
+      "sort": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "regions",
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Sum of Records"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "width": 26},
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "regions",
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          {"field": "regions", "type": "nominal"},
+          {"field": "mo", "type": "nominal"}
+        ],
+        "color": {
+          "field": "regions",
+          "type": "nominal",
+          "scale": {
+             "domain": ["Northeast", "West", "South", "Midwest"],
+        "range": ["#f03b20", "#2c7fb8", "#756bb1", "#dd1c77"]
+          },
+          "title": "Regions"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -5
+      },
+      "encoding": {
+        "text": {
+          "field": "regions",
+          "aggregate": "count",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": {}
+}
